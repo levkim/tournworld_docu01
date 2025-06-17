@@ -218,7 +218,7 @@
     <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-lg p-8 no-print">
         <div class="gradient-header-bg p-8 mb-8 text-white rounded-xl shadow-md">
             <h1 id="formTitle" class="text-4xl font-bold text-center mb-2 tracking-tight"> 여행상품 원가분석&간편 견적 생성기 VER1.0 by (주)더투어샵</h1>
-            <p class="text-center text-blue-100 mb-6"> 안녕하세요! 전세계 어드벤쳐 여행사 24년차 김대표입니다!<br> 온라인 초간편 원가분석 및 견적서 도우미 입니다. <br>본인이 필요해서 만들어서 공유하니 편하게 사용하세요! 사용료 1도 안받을터이니 불편해도 컴플레인 안받습니다! <br>사용후 도움이 되셨다면 커피한잔 쏘시면 감사드리구요! 카카오뱅크 3333-15-5166353 김대승<br> 이용 관련 피드백 master@thetourshop.co.kr 로 보내셔요<br> <font color=yellow> 김대표는 일본 및 중앙아시아,러시아지역 수배 또한 어드벤쳐 여행 전문입니다. 직거래 및 현지 사무실과 차량등을 운용하므로 b to b 견적 및 협업 언제든 환영합니다. </font><br><br> <사용 방법 간략 안내> <br> 1.구성은 여행사 및 랜드사 실무자가 데이터를 입력하는 상단부와 입력한 데이터 결과물은 간략 견적서로 보여주는 하단부 두가지 간편 구조입니다. <br>2.원가분석 항목을 입력후 저장을 원하면 아래"테이터 파일로 저장" 하기를 클릭하면 [여행상품 견적도우미-날짜. Json] 이 생성됩니다. 원하는 폴더에 저장후 수정 및 재사용시"테이터 파일 불러오기" 버튼으로 불러온후 사용하면됩니다.<br>3. 고객or거래처 여행사에게 전달하는 양식은 PDF파일로 저장됩니다. 작성 완료후 "PDF저장" 을 클릭하면 다운로드 가능합니다.</p>
+            <p class="text-center text-blue-100 mb-6"> <font color=red>권장사용 : 삼성 플립 이상의 대화면 핸드폰, 패드, 컴퓨터 </font><br>안녕하세요! 전세계 어드벤쳐 여행사 24년차 김대표입니다!<br> 온라인 초간편 원가분석 및 견적서 도우미 입니다. <br>본인이 필요해서 만들어서 공유하니 편하게 사용하세요! 사용료 1도 안받을터이니 불편해도 컴플레인 안받습니다! <br>사용후 도움이 되셨다면 커피한잔 쏘시면 감사드리구요! 카카오뱅크 3333-15-5166353 김대승<br> 이용 관련 피드백 master@thetourshop.co.kr 로 보내셔요<br> <font color=yellow> 김대표는 일본 및 중앙아시아,러시아지역 수배 또한 어드벤쳐 여행 전문입니다. 직거래 및 현지 사무실과 차량등을 운용하므로 b to b 견적 및 협업 언제든 환영합니다. </font><br><br> <사용 방법 간략 안내> <br> 1.구성은 여행사 및 랜드사 실무자가 데이터를 입력하는 상단부와 입력한 데이터 결과물은 간략 견적서로 보여주는 하단부 두가지 간편 구조입니다. <br>2.원가분석 항목을 입력후 저장을 원하면 아래"테이터 파일로 저장" 하기를 클릭하면 [여행상품 견적도우미-날짜. Json] 이 생성됩니다. 원하는 폴더에 저장후 수정 및 재사용시"테이터 파일 불러오기" 버튼으로 불러온후 사용하면됩니다.<br>3. 고객or거래처 여행사에게 전달하는 양식은 PDF파일로 저장됩니다. 작성 완료후 "PDF저장" 을 클릭하면 다운로드 가능합니다.</p>
 
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <div class="relative w-full sm:w-1/2">
@@ -286,7 +286,7 @@
                 <h2 class="section-heading"><i class="fas fa-boxes"></i> 원가 분석 항목</h2>
                 <p class="text-sm text-gray-600 mb-4">각 섹션별 원가를 관리하고 세부 항목을 추가/삭제 가능합니다. 각섹션은 사용자 편의/일정에 따라 커스터마이징이 가능해요<br> 각섹션의 '원가 분석 항목1,2 등의 제목은 수정해서 사용하세요 예) "항공료" , "지상비" </p>
                 <div id="wbsSectionsContainer">
-                    </div>
+                </div>
                 <button type="button" onclick="addWbsSection()" class="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                     <i class="fas fa-plus-square mr-2"></i> 원가 분석 항목 추가
                 </button>
@@ -633,37 +633,33 @@
                 if (formData.wbsSections && formData.wbsSections.length > 0) {
                     formData.wbsSections.forEach(sectionData => {
                         addWbsSection(sectionData);
-                        // 최대 ID 업데이트 (나중에 새 섹션 추가 시 충돌 방지)
-                        wbsSectionCounter = Math.max(wbsSectionCounter, parseInt(sectionData.id));
                     });
                 } else {
-                    addWbsSection(); // 저장된 WBS 섹션이 없으면 기본 하나 추가
+                    // 저장된 WBS 섹션이 없으면 기본 하나 추가
+                    addWbsSection();
                 }
-
-                updateOverallTotals();
-                setupInputPlaceholders(); // 로드된 요소에도 placeholder 설정
-                console.log("Form data loaded from local storage.");
             } else {
-                addWbsSection(); // 초기 로드 시 기본 WBS 섹션 하나 추가
-                updateOverallTotals();
-                setupInputPlaceholders();
+                // 저장된 데이터가 없으면 기본 WBS 섹션 하나 추가
+                addWbsSection();
             }
+            updateOverallTotals(); // 로드 후 총계 업데이트
         }
 
         function clearForm() {
-            document.getElementById('costAnalysisForm').reset();
-            localStorage.removeItem(documentTitle);
-            document.getElementById('wbsSectionsContainer').innerHTML = ''; // 모든 WBS 섹션 제거
-            wbsSectionCounter = 0; // 카운터 초기화
-            addWbsSection(); // 기본 WBS 섹션 하나 추가
-            updateOverallTotals(); // 초기화 후 총계 업데이트
-            generateDocument(); // 미리보기 업데이트
-            console.log("Form cleared and local storage removed.");
+            if (confirm('모든 양식 내용을 초기화하시겠습니까?')) {
+                document.getElementById('costAnalysisForm').reset();
+                document.getElementById('wbsSectionsContainer').innerHTML = '';
+                wbsSectionCounter = 0; // 카운터 초기화
+                addWbsSection(); // 기본 WBS 섹션 다시 추가
+                localStorage.removeItem(documentTitle);
+                updateOverallTotals(); // 초기화 후 총계 업데이트
+                console.log("Form data cleared from local storage.");
+            }
         }
 
         function downloadDataFile() {
             const formData = {};
-            document.querySelectorAll('#costAnalysisForm > .material-section input, #costAnalysisForm > .material-section textarea').forEach(input => {
+            document.querySelectorAll('#costAnalysisForm input, #costAnalysisForm textarea').forEach(input => {
                 if (input.name) {
                     if (input.type === 'number') {
                         formData[input.id || input.name] = parseFloat(input.value);
@@ -692,18 +688,18 @@
             });
             formData.wbsSections = wbsSectionsData;
 
-            const dataStr = JSON.stringify(formData, null, 2);
-            const blob = new Blob([dataStr], { type: "application/json" });
+            const dataStr = JSON.stringify(formData, null, 4);
+            const blob = new Blob([dataStr], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
+            const a = document.createElement('a');
             a.href = url;
-            const date = new Date().toISOString().slice(0, 10);
-            a.download = `${documentTitle}_${date}.json`;
+            const date = new Date();
+            const dateString = `${date.getFullYear()}${(date.getMonth() + 1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}`;
+            a.download = `${documentTitle.replace(/ /g, '_')}-${dateString}.json`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            console.log("Data file downloaded.");
         }
 
         function uploadDataFile(event) {
@@ -714,53 +710,47 @@
             const reader = new FileReader();
             reader.onload = function(e) {
                 try {
-                    const formData = JSON.parse(e.target.result);
-                    for (const key in formData) {
+                    const uploadedData = JSON.parse(e.target.result);
+                    for (const key in uploadedData) {
                         const input = document.getElementById(key);
-                        if (input) {
-                            input.value = formData[key];
+                        if (input && key !== 'wbsSections') { // wbsSections는 따로 처리
+                            input.value = uploadedData[key];
                         }
                     }
 
                     const wbsSectionsContainer = document.getElementById('wbsSectionsContainer');
-                    wbsSectionsContainer.innerHTML = '';
-                    wbsSectionCounter = 0; // 카운터 초기화
+                    wbsSectionsContainer.innerHTML = ''; // 기존 섹션 모두 제거
+                    wbsSectionCounter = 0; // 카운터 초기화 후 다시 빌드
 
-                    if (formData.wbsSections && formData.wbsSections.length > 0) {
-                        formData.wbsSections.forEach(sectionData => {
+                    if (uploadedData.wbsSections && uploadedData.wbsSections.length > 0) {
+                        uploadedData.wbsSections.forEach(sectionData => {
                             addWbsSection(sectionData);
-                            wbsSectionCounter = Math.max(wbsSectionCounter, parseInt(sectionData.id));
                         });
                     } else {
-                        addWbsSection();
+                        addWbsSection(); // WBS 섹션 데이터가 없으면 기본 추가
                     }
-                    updateOverallTotals();
-                    saveFormDataToLocalStorage(); // Uploaded data to local storage
-                    generateDocument();
-                    setupInputPlaceholders(); // 업로드된 요소에도 placeholder 설정
-                    console.log("Data file uploaded and form updated.");
-                } catch (e) {
-                    alert("잘못된 JSON 파일 형식입니다. 다시 확인해 주세요.");
-                    console.error("Error parsing JSON:", e);
+
+                    saveFormDataToLocalStorage(); // 업로드된 데이터를 로컬 스토리지에 저장
+                    updateOverallTotals(); // 업로드 후 총계 업데이트
+                    alert('데이터를 성공적으로 불러왔습니다.');
+                } catch (error) {
+                    alert('파일을 읽는 중 오류가 발생했습니다: ' + error.message);
+                    console.error('Error reading file:', error);
                 }
             };
             reader.readAsText(file);
-            event.target.value = ''; // Clear the input so same file can be uploaded again
+            event.target.value = ''; // 같은 파일을 다시 업로드할 수 있도록 input file 초기화
         }
 
         function setupInputPlaceholders() {
-            document.querySelectorAll('input[placeholder]').forEach(input => {
+            document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(input => {
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Tab' && !e.shiftKey) {
                         if (input.value === '') {
                             input.value = input.placeholder;
-                            e.preventDefault();
-                            // 다음 탭 정지 및 다음 필드로 포커스 이동 (선택 사항)
-                            const formElements = Array.from(document.querySelectorAll('#costAnalysisForm input, #costAnalysisForm textarea, #costAnalysisForm button'));
-                            const currentIndex = formElements.indexOf(input);
-                            if (currentIndex > -1 && currentIndex + 1 < formElements.length) {
-                                formElements[currentIndex + 1].focus();
-                            }
+                            e.preventDefault(); // 기본 탭 동작 방지
+                            saveFormDataToLocalStorage();
+                            generateDocument();
                         }
                     }
                 });
@@ -768,148 +758,164 @@
         }
 
         function setupInputPlaceholdersForNewElements(container) {
-            container.querySelectorAll('input[placeholder]').forEach(input => {
+            container.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(input => {
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Tab' && !e.shiftKey) {
                         if (input.value === '') {
                             input.value = input.placeholder;
                             e.preventDefault();
-                            const formElements = Array.from(document.querySelectorAll('#costAnalysisForm input, #costAnalysisForm textarea, #costAnalysisForm button'));
-                            const currentIndex = formElements.indexOf(input);
-                            if (currentIndex > -1 && currentIndex + 1 < formElements.length) {
-                                formElements[currentIndex + 1].focus();
-                            }
+                            saveFormDataToLocalStorage();
+                            generateDocument();
                         }
                     }
                 });
             });
         }
 
-
         function generateDocument() {
-            const senderInfo = document.getElementById('senderInfo').value || '미입력';
-            const recipientName = document.getElementById('recipientName').value || '미입력';
-            const productName = document.getElementById('productName').value || '상품명 미입력';
+            const senderInfo = document.getElementById('senderInfo').value;
+            const recipientName = document.getElementById('recipientName').value;
+            const productName = document.getElementById('productName').value;
             const startDate = document.getElementById('startDate').value;
             const endDate = document.getElementById('endDate').value;
-            const tripDateDisplay = (startDate && endDate) ? `${startDate} ~ ${endDate}` : '날짜 미입력';
-            const paxCount = document.getElementById('paxCount').value || '0';
+            const paxCount = document.getElementById('paxCount').value;
             const currencyUnit = getCurrencyUnit();
 
-            let wbsSectionsHtml = '';
-            document.querySelectorAll('#wbsSectionsContainer .wbs-section').forEach((wbsSection, index) => {
-                const sectionTitle = wbsSection.querySelector('input[name="wbsTitle"]').value;
-                let costItemsHtml = '';
-                wbsSection.querySelectorAll('.cost-items-body tr').forEach(row => {
-                    const itemName = row.querySelector('input[name="itemName"]').value;
-                    const itemAmount = parseFloat(row.querySelector('input[name="itemAmount"]').value) || 0;
-                    const itemQuantity = parseFloat(row.querySelector('input[name="itemQuantity"]').value) || 0;
-                    const itemPax = parseFloat(row.querySelector('input[name="itemPax"]').value) || 0;
-                    const subtotal = calculateSubtotal(row);
+            let outputHtml = `
+                <div class="print-only" style="padding: 20px;">
+                    <div class="gradient-header-bg text-white p-6 mb-8 rounded-lg text-center" style="--accent-color-start: ${themeColorStart}; --accent-color-end: ${themeColorEnd}; --header-bg-image: ${headerBgImage}; --header-bg-position: ${headerBgPosition}; --header-bg-size: ${headerBgSize}; --header-bg-opacity: ${headerBgOpacity};">
+                        <h1 class="text-3xl font-bold mb-2">여행상품 견적 안내서</h1>
+                        <p class="text-lg">${productName ? productName : '여행상품'}</p>
+                    </div>
 
-                    if (itemName) { // 항목명이 있는 경우만 출력
-                        costItemsHtml += `
-                            <tr>
-                                <td class="py-2 px-4 border">${itemName}</td>
-                                <td class="py-2 px-4 border text-right">${itemAmount.toLocaleString('ko-KR')} ${currencyUnit}</td>
-                                <td class="py-2 px-4 border text-right">${itemQuantity}</td>
-                                <td class="py-2 px-4 border text-right">${itemPax} 명</td>
-                                <td class="py-2 px-4 border text-right font-semibold">${subtotal.toLocaleString('ko-KR')} ${currencyUnit}</td>
-                            </tr>
-                        `;
-                    }
-                });
-
-                wbsSectionsHtml += `
                     <div class="material-section mb-6">
-                        <h3 class="section-heading print-only"><i class="fas fa-clipboard-list"></i> ${sectionTitle}</h3>
-                        <table class="min-w-full border-collapse">
-                            <thead>
-                                <tr class="bg-gray-100">
-                                    <th class="py-2 px-4 border text-left">항목명</th>
-                                    <th class="py-2 px-4 border text-left">금액</th>
-                                    <th class="py-2 px-4 border text-left">횟수</th>
-                                    <th class="py-2 px-4 border text-left">인원</th>
-                                    <th class="py-2 px-4 border text-left">소계</th>
-                                </tr>
-                            </thead>
+                        <h2 class="section-heading text-lg"><i class="fas fa-info-circle"></i> 기본 정보</h2>
+                        <table class="w-full text-left table-auto">
                             <tbody>
-                                ${costItemsHtml || `<tr><td colspan="5" class="py-4 px-4 text-center text-gray-500">입력된 원가 항목이 없습니다.</td></tr>`}
+                                <tr>
+                                    <th class="font-semibold py-2 px-3 border-b border-gray-200 w-1/4">발신자</th>
+                                    <td class="py-2 px-3 border-b border-gray-200">${senderInfo || '정보 없음'}</td>
+                                </tr>
+                                <tr>
+                                    <th class="font-semibold py-2 px-3 border-b border-gray-200">수신자</th>
+                                    <td class="py-2 px-3 border-b border-gray-200">${recipientName || '정보 없음'}</td>
+                                </tr>
+                                <tr>
+                                    <th class="font-semibold py-2 px-3 border-b border-gray-200">상품명</th>
+                                    <td class="py-2 px-3 border-b border-gray-200">${productName || '정보 없음'}</td>
+                                </tr>
+                                <tr>
+                                    <th class="font-semibold py-2 px-3 border-b border-gray-200">여행 기간</th>
+                                    <td class="py-2 px-3 border-b border-gray-200">${startDate} ~ ${endDate}</td>
+                                </tr>
+                                <tr>
+                                    <th class="font-semibold py-2 px-3">총 인원수</th>
+                                    <td class="py-2 px-3">${paxCount} 명</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 `;
-            });
 
+            const wbsSections = document.querySelectorAll('#wbsSectionsContainer .wbs-section');
+            if (wbsSections.length > 0) {
+                outputHtml += `
+                    <div class="material-section mb-6">
+                        <h2 class="section-heading text-lg"><i class="fas fa-boxes"></i> 원가 분석 세부 내역</h2>
+                `;
+                wbsSections.forEach(section => {
+                    const sectionTitle = section.querySelector('input[name="wbsTitle"]').value;
+                    const items = [];
+                    section.querySelectorAll('.cost-items-body tr').forEach(row => {
+                        const itemName = row.querySelector('input[name="itemName"]').value;
+                        const itemAmount = parseFloat(row.querySelector('input[name="itemAmount"]').value) || 0;
+                        const itemQuantity = parseFloat(row.querySelector('input[name="itemQuantity"]').value) || 0;
+                        const itemPax = parseFloat(row.querySelector('input[name="itemPax"]').value) || 0;
+                        const subtotal = itemAmount * itemQuantity * itemPax;
+                        if (itemName) { // 항목명이 있는 경우만 출력
+                            items.push({
+                                itemName,
+                                itemAmount,
+                                itemQuantity,
+                                itemPax,
+                                subtotal
+                            });
+                        }
+                    });
 
-            const totalCostValue = document.getElementById('totalCost').textContent;
-            const costPerPaxValue = document.getElementById('costPerPax').textContent;
-
-            const documentHtml = `
-                <div class="gradient-header-bg p-6 mb-8 text-white rounded-lg print-only">
-                    <h1 class="text-3xl font-bold text-center mb-2">여행상품 견적 안내서</h1>
-                    <p class="text-center text-blue-100">최종 분석일: ${new Date().toLocaleDateString('ko-KR')}</p>
-                </div>
-                <div class="material-section mb-6">
-                    <h2 class="section-heading print-only"><i class="fas fa-info-circle"></i> 기본 정보</h2>
-                    <p class="mb-2"><strong class="font-semibold">발신자:</strong> ${senderInfo}</p>
-                    <p class="mb-2"><strong class="font-semibold">수신자:</strong> ${recipientName}</p>
-                    <p class="mb-2"><strong class="font-semibold">상품명:</strong> ${productName}</p>
-                    <p class="mb-2"><strong class="font-semibold">여행 기간:</strong> ${tripDateDisplay}</p>
-                    <p class="mb-2"><strong class="font-semibold">총 인원수:</strong> ${paxCount} 명</p>
-                    <p><strong class="font-semibold">통화 단위:</strong> ${currencyUnit || '미지정'}</p>
-                </div>
-
-                ${wbsSectionsHtml}
-
-                <div class="material-section">
-                    <h2 class="section-heading print-only"><i class="fas fa-calculator"></i> 최종 합계</h2>
-                    <table class="min-w-full border-collapse">
-                        <tfoot>
-                            <tr class="bg-gray-50 font-bold">
-                                <td colspan="4" class="py-2 px-4 border text-right">지상비 TOTAL</td>
-                                <td class="py-2 px-4 border text-right">${totalCostValue}</td>
-                            </tr>
-                            <tr class="bg-gray-50 font-bold">
-                                <td colspan="4" class="py-2 px-4 border text-right">1인당 요금</td>
-                                <td class="py-2 px-4 border text-right">${costPerPaxValue}</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-                <div class="material-section mt-6">
-                    <h3 class="section-heading print-only"><i class="fas fa-comment-dots"></i> 비고</h3>
-                    <p class="text-gray-700">상기 견적서 작성시 기준의 요금과 환율 기준으로 작성 되었습니다. 기간 경과시 변경 사항이 발생될수 있으니 재확인이 필요합니다.<br>
-<br></p>
-                </div>
-            `;
-            document.getElementById('documentPreview').innerHTML = documentHtml;
-            console.log("Document preview updated.");
-        }
-
-        // 초기 로드 시 실행
-        document.addEventListener('DOMContentLoaded', () => {
-            loadFormDataFromLocalStorage();
-            setupInputPlaceholders();
-            generateDocument(); // 초기 미리보기 생성
-
-            // 기본 정보 섹션의 input 필드에 이벤트 리스너 추가
-            document.querySelectorAll('#costAnalysisForm > .material-section:first-of-type input, #costAnalysisForm > .material-section:first-of-type textarea').forEach(input => {
-                input.addEventListener('input', () => {
-                    saveFormDataToLocalStorage();
-                    generateDocument();
-                    // 총 인원수가 변경될 때 전체 총계도 다시 계산
-                    if (input.id === 'paxCount' || input.id === 'currencyUnit') {
-                        updateOverallTotals();
+                    if (items.length > 0) {
+                        outputHtml += `
+                            <h3 class="text-md font-bold mt-4 mb-2 accent-border" style="border-left-color: ${themeColor}">${sectionTitle || '세부 항목'}</h3>
+                            <table class="w-full text-left table-auto border border-gray-200 mb-4">
+                                <thead>
+                                    <tr class="bg-gray-50 text-gray-700">
+                                        <th class="py-2 px-3 border-b border-gray-200">항목명</th>
+                                        <th class="py-2 px-3 border-b border-gray-200 text-right">금액 (${currencyUnit})</th>
+                                        <th class="py-2 px-3 border-b border-gray-200 text-right">횟수</th>
+                                        <th class="py-2 px-3 border-b border-gray-200 text-right">인원</th>
+                                        <th class="py-2 px-3 border-b border-gray-200 text-right">소계 (${currencyUnit})</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        `;
+                        items.forEach(item => {
+                            outputHtml += `
+                                <tr>
+                                    <td class="py-2 px-3 border-b border-gray-200">${item.itemName}</td>
+                                    <td class="py-2 px-3 border-b border-gray-200 text-right">${item.itemAmount.toLocaleString('ko-KR')}</td>
+                                    <td class="py-2 px-3 border-b border-gray-200 text-right">${item.itemQuantity}</td>
+                                    <td class="py-2 px-3 border-b border-gray-200 text-right">${item.itemPax}</td>
+                                    <td class="py-2 px-3 border-b border-gray-200 text-right font-semibold">${item.subtotal.toLocaleString('ko-KR')}</td>
+                                </tr>
+                            `;
+                        });
+                        outputHtml += `
+                                </tbody>
+                            </table>
+                        `;
                     }
                 });
+                outputHtml += `</div>`;
+            }
+
+            const totalCost = document.getElementById('totalCost').textContent;
+            const costPerPax = document.getElementById('costPerPax').textContent;
+
+            outputHtml += `
+                    <div class="material-section">
+                        <h2 class="section-heading text-lg"><i class="fas fa-calculator"></i> 최종 견적</h2>
+                        <table class="w-full text-left table-auto">
+                            <tbody>
+                                <tr class="bg-blue-50">
+                                    <th class="font-semibold py-2 px-3 border-b border-gray-200 w-1/4">총 지상비</th>
+                                    <td class="py-2 px-3 border-b border-gray-200 text-right font-bold text-blue-700 text-xl">${totalCost}</td>
+                                </tr>
+                                <tr class="bg-blue-100">
+                                    <th class="font-semibold py-2 px-3">1인당 요금</th>
+                                    <td class="py-2 px-3 text-right font-bold text-blue-700 text-xl">${costPerPax}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+            document.getElementById('documentPreview').innerHTML = outputHtml;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFormDataFromLocalStorage();
+            setupInputPlaceholders(); // 기존 입력 필드에 placeholder 설정
+            document.getElementById('costAnalysisForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                generateDocument();
             });
 
-            // 폼 제출 이벤트 (미리보기 업데이트 목적)
-            document.getElementById('costAnalysisForm').addEventListener('submit', function(event) {
-                event.preventDefault(); // 기본 폼 제출 동작 방지
-                generateDocument();
+            // 모든 input, textarea에 대해 input 이벤트 리스너 추가
+            document.querySelectorAll('#costAnalysisForm input, #costAnalysisForm textarea').forEach(input => {
+                input.addEventListener('input', () => {
+                    saveFormDataToLocalStorage();
+                    generateDocument(); // 변경 시 미리보기도 즉시 업데이트
+                });
             });
         });
     </script>
